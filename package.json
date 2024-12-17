@@ -1,5 +1,5 @@
 {
-  "name": "--experimental-app",
+  "name": "fresh",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,9 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "mongodb": "^6.12.0",
+    "next": "15.0.2",
     "react": "19.0.0-rc-02c0e824-20241028",
-    "react-dom": "19.0.0-rc-02c0e824-20241028",
-    "next": "15.0.2"
+    "react-dom": "19.0.0-rc-02c0e824-20241028"
   },
   "devDependencies": {
     "postcss": "^8",
