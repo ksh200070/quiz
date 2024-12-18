@@ -4,8 +4,8 @@ import Link from "next/link";
 import { Analytics } from "@vercel/analytics/next";
 
 export const metadata = {
-  title: "뚱이 퀴즈 게임 | 다양한 국가 관련 퀴즈 사이트",
-  siteName: "뚱이 퀴즈",
+  title: "뚱이퀴즈 | 다양한 국가 관련 퀴즈 사이트",
+  siteName: "뚱이퀴즈",
   description: "여행과 관련한 다양한 퀴즈를 풀 수 있는 퀴즈 사이트입니다.",
   icons: {
     icon: "/icon.png",
@@ -17,8 +17,8 @@ export const metadata = {
     "naver-site-verification": "e81e96413b9dd7d362260f5dc6812747d6f3ddb6",
   },
   openGraph: {
-    title: "뚱이 퀴즈 게임",
-    description: "뚱이 퀴즈 게임 사이트입니다.",
+    title: "뚱이퀴즈",
+    description: "뚱이퀴즈 사이트입니다.",
     images: "/opengraph-image.png",
   },
   url: "https://quiz-steel-ten.vercel.app",
