@@ -16,7 +16,11 @@ export const metadata = {
   other: {
     "naver-site-verification": "e81e96413b9dd7d362260f5dc6812747d6f3ddb6",
   },
-  ogImage: "/opengraph-image.png",
+  openGraph: {
+    title: "뚱이 퀴즈 게임",
+    description: "뚱이 퀴즈 게임 사이트입니다.",
+    images: "/opengraph-image.png",
+  },
   url: "https://quiz-steel-ten.vercel.app",
   keyword: [
     "뚱이",
