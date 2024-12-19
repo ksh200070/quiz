@@ -158,3 +158,23 @@ button:hover {
 .control-box button {
   justify-self: end;
 }
+
+.wrong-items {
+  padding: 8px;
+  display: grid;
+  grid-template-rows: 1fr;
+  gap: 8px;
+  border-top: 2px solid #aaa;
+  border-left: 2px solid #aaa;
+}
+
+.wrong-item {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 8px;
+  align-items: center;
+}
+
+.wrong-item-img {
+  width: 80px;
+}

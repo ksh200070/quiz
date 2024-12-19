@@ -17,11 +17,11 @@ export default function Result({ item, result, children }) {
         </div>
       )}
       <div className="control-box">
-        <span>(정답 : {item.name})</span>
+        <span>(정답 : {item.name || item.answer})</span>
         {children}
       </div>
       <img className="card-img success" src={item.successImage} alt="" />
-      <span>{item.description}</span>
+      {/* <span>{item.description}</span> */}
     </>
   );
 }

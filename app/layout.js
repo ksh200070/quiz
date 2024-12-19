@@ -2,6 +2,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Link from "next/link";
 import { Analytics } from "@vercel/analytics/next";
+import Navigation from "@/component/navigation";
 
 export const metadata = {
   title: "뚱이퀴즈 | 다양한 국가 관련 퀴즈 사이트",
@@ -34,18 +35,11 @@ export const metadata = {
   ],
 };
 
-export default function RootLayout({ children }) {
+export default async function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <div className="navbar">
-          <Link href="/" className="selected">
-            국기
-            <img src="./icon_flag.png" alt="" />
-          </Link>
-          <Link href="/list">수도</Link>
-        </div>
-
+        <Navigation></Navigation>
         {children}
         <Analytics />
       </body>

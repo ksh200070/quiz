@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import Result from "./result";
+import Finish from "./finish";
 
 export default function Card({ items }) {
   const [input, setInput] = useState("");
@@ -8,6 +9,7 @@ export default function Card({ items }) {
   const [index, setIndex] = useState(0);
   const [finish, setFinish] = useState(false);
   const [score, setScore] = useState(0);
+  const [itemsResult, setItemsResult] = useState([]);
 
   const inputHandler = (e) => {
     setInput(e.target.value);
@@ -16,9 +18,17 @@ export default function Card({ items }) {
 
   const checkAnswer = () => {
     setSubmit(true);
-    if (input === items[index].name) {
+    if (input === (items[index].name || items[index].answer)) {
       setScore((prev) => (prev += 1));
     }
+
+    setItemsResult((prev) => [
+      ...prev,
+      {
+        ...items[index],
+        result: input === (items[index].name || items[index].answer),
+      },
+    ]);
   };
 
   const nextHandler = () => {
@@ -40,20 +50,16 @@ export default function Card({ items }) {
   return (
     <div className="card">
       {finish ? (
-        <>
-          점수 : {score}/{items.length}
-        </>
+        <Finish
+          myScore={score}
+          perfectScore={items.length}
+          wrong={itemsResult}
+        ></Finish>
       ) : !submit ? (
         <>
           <span>
             {index + 1}/{items.length}
           </span>
-          <img
-            item={items[index]}
-            className="card-img"
-            src={items[index].img}
-            alt=""
-          />
           <div className="interaction">
             <input
               type="text"
@@ -65,11 +71,18 @@ export default function Card({ items }) {
             />
             <button onClick={checkAnswer}>확인</button>
           </div>
+          {items[index].description && <h1>{items[index].description}</h1>}
+          <img
+            item={items[index]}
+            className="card-img"
+            src={items[index].img}
+            alt=""
+          />
         </>
       ) : (
         <Result
           item={items[index]}
-          result={items[index].name === input}
+          result={(items[index].name || items[index].answer) === input}
           // img={items[index].successImage}
           // description={items[index].description}
         >
